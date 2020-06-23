@@ -35,15 +35,6 @@ phases:
     stepsInParallel: false
   - type: K8S_PHASE_STEP
     name: Wrap Up
-    steps:
-    - type: EMAIL
-      name: Email
-      properties:
-        body: ''
-        ccAddress: ''
-        ignoreDeliveryFailure: false
-        subject: GitOps Demo Successfully Deployed
-        toAddress: bjimerson@gmail.com
     stepsInParallel: false
   provisionNodes: false
   serviceName: gitops-demo-service
