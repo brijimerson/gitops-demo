@@ -5,5 +5,5 @@ deploymentType: KUBERNETES
 infrastructure:
 - type: DIRECT_KUBERNETES
   cloudProviderName: Ahead-aks-demo
-  namespace: gitops-demo-production
+  namespace: gitops-demo
   releaseName: release-${infra.kubernetes.infraId}
