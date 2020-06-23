@@ -8,6 +8,15 @@ failureStrategies:
   - APPLICATION_ERROR
   repairActionCode: ROLLBACK_WORKFLOW
   retryCount: 0
+notificationRules:
+- conditions:
+  - FAILED
+  - SUCCESS
+  executionScope: WORKFLOW
+  notificationGroupAsExpression: false
+  userGroupAsExpression: false
+  userGroupIds:
+  - 46Afwv-dTEaEORGhzUmOMg
 phases:
 - type: KUBERNETES
   computeProviderName: Ahead-aks-demo
