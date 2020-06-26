@@ -1,0 +1,29 @@
+harnessApiVersion: '1.0'
+type: PIPELINE
+pipelineStages:
+- type: APPROVAL
+  name: Approval 0
+  parallel: false
+  properties:
+    userGroups:
+    - GitOps Demo Administrators
+    workflowVariables: null
+    pipelineStageElementId: Lpb9fhUaQW2KY8eNEl9nLQ
+    stageName: STAGE 1
+    disable: false
+    timeoutMillis: 86400000
+    disableAssertion: null
+    pipelineStageParallelIndex: 1
+    approvalStateType: USER_GROUP
+    sweepingOutputName: ''
+    pipelineId: UrcrPSIrQsiVOZfYhsSCWA
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 1
+- type: ENV_STATE
+  name: production-workflow
+  parallel: false
+  skipCondition:
+    type: DO_NOT_SKIP
+  stageName: STAGE 2
+  workflowName: production-workflow

@@ -1,0 +1,5 @@
+harnessApiVersion: '1.0'
+type: DOCKER
+password: gcpkms:8b6Osch-SbOIujZ08XmLvw
+url: https://index.docker.io/v2/
+username: timcurless
