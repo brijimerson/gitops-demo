@@ -1,0 +1,5 @@
+harnessApiVersion: '1.0'
+type: SERVICENOW
+baseUrl: https://dev35202.service-now.com
+password: gcpkms:0zdf6QKURSa_Jp2OIg0CDA
+username: frank.kuligowski@thinkahead.com
