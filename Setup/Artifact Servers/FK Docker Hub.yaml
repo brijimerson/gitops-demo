@@ -1,0 +1,5 @@
+harnessApiVersion: '1.0'
+type: DOCKER
+password: gcpkms:ijyO4uB6TByuAggF9anNhQ
+url: https://index.docker.io/v2/
+username: fckuligowski
