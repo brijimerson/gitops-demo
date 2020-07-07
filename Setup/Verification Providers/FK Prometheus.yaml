@@ -1,0 +1,15 @@
+harnessApiVersion: '1.0'
+type: PROMETHEUS
+prometheusUrl: http://34.73.204.70:8080/
+usageRestrictions:
+  appEnvRestrictions:
+  - appFilter:
+      filterType: ALL
+    envFilter:
+      filterTypes:
+      - PROD
+  - appFilter:
+      filterType: ALL
+    envFilter:
+      filterTypes:
+      - NON_PROD
