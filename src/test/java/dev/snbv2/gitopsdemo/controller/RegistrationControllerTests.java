@@ -1,4 +1,4 @@
-package com.thinkahead.gitopsdemo.controller;
+package dev.snbv2.gitopsdemo.controller;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;

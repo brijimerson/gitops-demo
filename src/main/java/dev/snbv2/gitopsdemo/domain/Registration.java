@@ -1,4 +1,4 @@
-package com.thinkahead.gitopsdemo.domain;
+package dev.snbv2.gitopsdemo.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

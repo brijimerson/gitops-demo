@@ -1,4 +1,4 @@
-package com.thinkahead.gitopsdemo;
+package dev.snbv2.gitopsdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

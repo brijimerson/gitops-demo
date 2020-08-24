@@ -1,4 +1,4 @@
-package com.thinkahead.gitopsdemo;
+package dev.snbv2.gitopsdemo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

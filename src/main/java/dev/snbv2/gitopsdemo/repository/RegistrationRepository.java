@@ -1,10 +1,10 @@
-package com.thinkahead.gitopsdemo.repository;
+package dev.snbv2.gitopsdemo.repository;
 
 import java.util.List;
 
-import com.thinkahead.gitopsdemo.domain.Registration;
-
 import org.springframework.data.repository.CrudRepository;
+
+import dev.snbv2.gitopsdemo.domain.Registration;
 
 /**
  * JPA CRUD repository for the Registration entity.

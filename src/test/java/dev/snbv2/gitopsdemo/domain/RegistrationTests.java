@@ -1,10 +1,12 @@
-package com.thinkahead.gitopsdemo.domain;
+package dev.snbv2.gitopsdemo.domain;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import dev.snbv2.gitopsdemo.domain.Registration;
 
 /**
  * Tests for the Registration domain class.

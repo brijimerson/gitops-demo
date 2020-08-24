@@ -1,11 +1,8 @@
-package com.thinkahead.gitopsdemo.controller;
+package dev.snbv2.gitopsdemo.controller;
 
 import java.util.Optional;
 
 import javax.validation.Valid;
-
-import com.thinkahead.gitopsdemo.domain.Registration;
-import com.thinkahead.gitopsdemo.repository.RegistrationRepository;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -17,6 +14,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import dev.snbv2.gitopsdemo.domain.Registration;
+import dev.snbv2.gitopsdemo.repository.RegistrationRepository;
 
 /**
  * Controller for the registrations list view and registration edit view.

@@ -1,4 +1,4 @@
-package com.thinkahead.gitopsdemo.controller;
+package dev.snbv2.gitopsdemo.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

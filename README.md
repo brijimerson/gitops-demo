@@ -35,10 +35,10 @@ The general flow of the CI/CD deployment is as follows:
 
 1. Changes are made on the local development environment.
 1. Changes are committed to the Git repository.
-1. The Buddy pipeline detects a new commit to the Git repository.
-1. The Buddy pipeline gets the updated repository, and builds and tests the application
+1. The Azure DevOps pipeline detects a new commit to the Git repository.
+1. The Azure DevOps pipeline gets the updated repository, and builds and tests the application
 1. If the tests pass, the branch is merged back into the master branch
-1. Another Buddy pipeline detects the change, builds the Docker image, and pushes the Docker image to DockerHub.
+1. Another Azure DevOps pipeline detects the change, builds the Docker image, and pushes the Docker image to DockerHub.
 1. The Harness application detects the updated Docker image in Docker Hub.
 1. The Harness application pulls the new image, and does a rolling deploy to the AKS Kubernetes cluster, creating load balancing services and namespaces if necessary.
 
