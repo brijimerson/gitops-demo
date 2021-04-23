@@ -1,0 +1,8 @@
+harnessApiVersion: '1.0'
+type: GIT
+branch: master
+keyAuth: false
+password: gcpkms:yxSRRnbcStWwbYTd4C58uQ
+url: https://github.com/AheadAviation/automation-summit-demo
+urlType: REPO
+username: timcurless
