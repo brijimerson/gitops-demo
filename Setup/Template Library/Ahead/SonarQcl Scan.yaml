@@ -1,5 +1,0 @@
-harnessApiVersion: '1.0'
-type: SHELL_SCRIPT
-scriptString: ssd
-scriptType: BASH
-timeoutMillis: 600000

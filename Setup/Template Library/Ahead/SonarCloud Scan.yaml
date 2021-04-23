@@ -1,0 +1,266 @@
+harnessApiVersion: '1.0'
+type: SHELL_SCRIPT
+scriptString: |-
+  echo 'sonarqube-scanner --service "${service.name}" --artifact "${artifact.artifactPath}"'
+  cat << EOM
+  Target(s) specified: sonarqube-build
+  sonarqube-build:
+  reset-private-vars:
+   [exec] Apply the following changes to sonar configuration Files
+   [exec] ###################################
+   [exec] ########## Begin Stage ###########
+   [exec] ###################################
+   [exec] [Execute] : O:\opencover/tools\sonarqube\runner\MSBuild.SonarQube.Runner.exe begin /d:sonar.host.url=https://sonarcloud.io /k:opencover /n:opencover /v:0
+  /d:sonar.verbose=true /d:sonar.sourceEncoding=UTF-8 /d:sonar.cxx.forceIncludes=sonar.h /d:sonar.cfamily.build-wrapper-output.bypass=true
+  /d:sonar.cs.opencover.reportsPaths=O:\opencover\main\bin\release\opencovertests.xml
+  /d:sonar.sources=O:\opencover\main\OpenCover.Console,O:\opencover\main\OpenCover.Framework,O:\opencover\main\OpenCover.Extentions,O:\opencover\main\OpenCov
+  er.Profiler,O:\opencover\main\OpenCover.Support /d:sonar.tests=O:\opencover\main\OpenCover.Test,O:\opencover\main\OpenCover.Test.Profiler
+  /d:sonar.exclusions=**\*.config /s:"C:\Users\harness\AppData\Local\Temp\tmpDA39.tmp"
+   [exec]
+   [exec] SonarQube Scanner for MSBuild 2.3.1
+   [exec] Loading analysis properties from C:\Users\harness\AppData\Local\Temp\tmpDA39.tmp
+   [exec] sonar.verbose=true was specified - setting the log verbosity to 'Debug'
+   [exec] Pre-processing started.
+   [exec] Preparing working directories...
+   [exec] Using environment variables to determine the download directory...
+   [exec] Removing the existing directory: O:\opencover\main\.sonarqube
+   [exec] Creating directory: O:\opencover\main\.sonarqube
+   [exec] 09:38:48.118 09:38:48.106 Loading analysis properties from C:\Users\harness\AppData\Local\Temp\tmpDA39.tmp
+   [exec] 09:38:48.118 09:38:48.118 sonar.verbose=true was specified - setting the log verbosity to 'Debug'
+   [exec] 09:38:48.12 Updating build integration targets...
+   [exec] 09:38:48.133 Installed SonarQube.Integration.ImportBefore.targets to
+  C:\Users\harness\AppData\Local\Microsoft\MSBuild\15.0\Microsoft.Common.targets\ImportBefore
+   [exec] 09:38:48.135 Installed SonarQube.Integration.ImportBefore.targets to
+  C:\Users\harness\AppData\Local\Microsoft\MSBuild\14.0\Microsoft.Common.targets\ImportBefore
+   [exec] 09:38:48.138 Installed SonarQube.Integration.ImportBefore.targets to
+  C:\Users\harness\AppData\Local\Microsoft\MSBuild\12.0\Microsoft.Common.targets\ImportBefore
+   [exec] 09:38:48.14 Installed SonarQube.Integration.targets to O:\opencover\main\.sonarqube\bin\targets
+   [exec] 09:38:48.141 Creating config and output folders...
+   [exec] 09:38:48.141 Creating directory: O:\opencover\main\.sonarqube\conf
+   [exec] 09:38:48.142 Creating directory: O:\opencover\main\.sonarqube\out
+   [exec] 09:38:48.148 Fetching analysis configuration settings...
+   [exec] 09:38:48.15 Downloading from https://sonarcloud.io/api/server/version...
+   [exec] 09:38:49.446 Fetching properties for project 'opencover' from https://sonarcloud.io/api/settings/values?component=opencover...
+   [exec] 09:38:49.447 Downloading from https://sonarcloud.io/api/settings/values?component=opencover...
+   [exec] 09:38:49.7 Downloading from https://sonarcloud.io/api/languages/list...
+   [exec] 09:38:49.932 Fetching quality profile for project 'opencover' from https://sonarcloud.io/api/qualityprofiles/search?projectKey=opencover...
+   [exec] 09:38:49.932 Downloading from https://sonarcloud.io/api/qualityprofiles/search?projectKey=opencover...
+   [exec] 09:38:50.217 Fetching active rules for quality profile 'cs-sonar-way-31865' from
+  https://sonarcloud.io/api/rules/search?f=repo,name,severity,lang,internalKey,templateKey,params,actives&ps=500&activation=true&qprofile=cs-sonar-way-31865&p=1...
+   [exec] 09:38:50.218 Downloading from
+  https://sonarcloud.io/api/rules/search?f=repo,name,severity,lang,internalKey,templateKey,params,actives&ps=500&activation=true&qprofile=cs-sonar-way-31865&p=1...
+   [exec] 09:38:51.423 Fetching rules not active in quality profile 'cs-sonar-way-31865' for language 'cs' from
+  https://sonarcloud.io/api/rules/search?f=internalKey&ps=500&activation=false&qprofile=cs-sonar-way-31865&p=1&languages=cs...
+   [exec] 09:38:51.423 Downloading from https://sonarcloud.io/api/rules/search?f=internalKey&ps=500&activation=false&qprofile=cs-sonar-way-31865&p=1&languages=cs...
+   [exec] 09:38:51.69 Generating rulesets...
+   [exec] 09:38:51.69 Generating the FxCop ruleset: O:\opencover\main\.sonarqube\conf\SonarQubeFxCop-cs.ruleset
+   [exec] 09:38:51.693 Local analyzer cache: C:\Users\harness\AppData\Local\Temp\.sonarqube\resources
+   [exec] 09:38:51.699 Writing Roslyn generated ruleset to O:\opencover\main\.sonarqube\conf\SonarQubeRoslyn-cs.ruleset...
+   [exec] 09:38:51.717 Writing Roslyn analyzer additional file to O:\opencover\main\.sonarqube\conf\cs\SonarLint.xml...
+   [exec] 09:38:51.72 Provisioning analyzer assemblies for cs...
+   [exec] 09:38:51.721 Installing required Roslyn analyzers...
+   [exec] 09:38:51.721 Processing plugin: csharp version 6.6.0.3969
+   [exec] 09:38:51.733 Cache hit: using plugin files from C:\Users\harness\AppData\Local\Temp\.sonarqube\resources\0
+   [exec] 09:38:51.733 Fetching quality profile for project 'opencover' from https://sonarcloud.io/api/qualityprofiles/search?projectKey=opencover...
+   [exec] 09:38:51.733 Downloading from https://sonarcloud.io/api/qualityprofiles/search?projectKey=opencover...
+   [exec] 09:38:52.01 Fetching active rules for quality profile 'vbnet-sonar-way-31082' from
+  https://sonarcloud.io/api/rules/search?f=repo,name,severity,lang,internalKey,templateKey,params,actives&ps=500&activation=true&qprofile=vbnet-sonar-way-31082&p=1...
+   [exec] 09:38:52.01 Downloading from
+  https://sonarcloud.io/api/rules/search?f=repo,name,severity,lang,internalKey,templateKey,params,actives&ps=500&activation=true&qprofile=vbnet-sonar-way-31082&p=1...
+   [exec] 09:38:52.273 Fetching rules not active in quality profile 'vbnet-sonar-way-31082' for language 'vbnet' from
+  https://sonarcloud.io/api/rules/search?f=internalKey&ps=500&activation=false&qprofile=vbnet-sonar-way-31082&p=1&languages=vbnet...
+   [exec] 09:38:52.273 Downloading from
+  https://sonarcloud.io/api/rules/search?f=internalKey&ps=500&activation=false&qprofile=vbnet-sonar-way-31082&p=1&languages=vbnet...
+   [exec] 09:38:52.524 Generating rulesets...
+   [exec] 09:38:52.524 Generating the FxCop ruleset: O:\opencover\main\.sonarqube\conf\SonarQubeFxCop-vbnet.ruleset
+   [exec] 09:38:52.524 Local analyzer cache: C:\Users\harness\AppData\Local\Temp\.sonarqube\resources
+   [exec] 09:38:52.524 Writing Roslyn generated ruleset to O:\opencover\main\.sonarqube\conf\SonarQubeRoslyn-vbnet.ruleset...
+   [exec] 09:38:52.526 Writing Roslyn analyzer additional file to O:\opencover\main\.sonarqube\conf\vbnet\SonarLint.xml...
+   [exec] 09:38:52.528 Provisioning analyzer assemblies for vbnet...
+   [exec] 09:38:52.528 Installing required Roslyn analyzers...
+   [exec] 09:38:52.528 Processing plugin: vbnet version 6.5.0.3766
+   [exec] 09:38:52.529 Cache hit: using plugin files from C:\Users\harness\AppData\Local\Temp\.sonarqube\resources\1
+   [exec] 09:38:52.555 Pre-processing succeeded.
+   [exec] [CxxSonarQubeMsbuidRunner] Capture Environment For Build cmd.exe /c "C:\Program Files (x86)\Microsoft Visual
+  Studio\2017\Professional\Common7\Tools\vsdevcmd\core\vsdevcmd_start.bat " && set
+   [exec] ###################################
+   [exec] ######## Build Solution ###########
+   [exec] ###################################
+   [exec] [Execute] : "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Professional\MSBuild\15.0\Bin\MSBuild.exe" "O:\opencover\main\opencover.sln" /v:Detailed
+  /p:SonarQubeTempPath="O:\opencover\main\.sonarqube" /p:Configuration=release,Platform=x64,GtestRunnerTaskEnabled=false /t:Clean;Build /p:VeraTaskEnabled=true
+  /p:RatsTaskEnabled=true /p:CppLintTaskEnabled=true /p:CppCheckTaskEnabled=true
+  /l:FileLogger,Microsoft.Build.Engine;logfile=O:\opencover\main\.cxxresults\BuildLog.txt;Encoding=UTF-8 /noconsolelogger /m:1
+   [exec]
+   [exec] [CxxSonarQubeMsbuidRunner] The following msbuild processes have been found:
+   [exec] [CxxSonarQubeMsbuidRunner] The following msbuild processes have been found after running analysis:
+   [exec] [CxxSonarQubeMsbuidRunner] The following msbuild processes have been found after cleaning up:
+   [exec]
+  O:\opencover\main\BuildO:\opencover\main\.nugetO:\opencover\main\SonarO:\opencover\main\ProfilerO:\opencover\main\.buildO:\opencover\main\TargetO:\opencover\main\F
+  rameworkO:\opencover\main\OpenCover.Profiler\OpenCover.Profiler.vcxprojO:\opencover\main\OpenCover.Console\OpenCover.Console.csprojO:\opencover\main\OpenCover
+  .Test\OpenCover.Test.csprojO:\opencover\main\OpenCover.Test.Profiler\OpenCover.Test.Profiler.vcxprojO:\opencover\main\OpenCover.Simple.Target\OpenCover.Simple.Tar
+  get.csprojO:\opencover\main\OpenCover.Framework\OpenCover.Framework.csprojO:\opencover\main\OpenCover.Integration.Test\OpenCover.Integration.Test.csprojO:\openc
+  over\main\OpenCover.MSBuild\OpenCover.MSBuild.csprojO:\opencover\main\OpenCover.Installer\OpenCover.Installer.wixprojO:\opencover\main\OpenCover.Specs\OpenCov
+  er.Specs.csprojO:\opencover\main\OpenCover.Extensions\OpenCover.Extensions.csprojO:\opencover\main\OpenCover.Support\OpenCover.Support.csprojO:\opencover\main\
+  OpenCover.UITest\OpenCover.UITest.csprojO:\opencover\main\OpenCover.3rdParty.Signer\OpenCover.3rdParty.Signer.csprojO:\opencover\main\OpenCover.Simple.Target.C
+  ore\OpenCover.Simple.Target.Core.csprojO:\opencover\main\OpenCover.Simple.Target.Core.Portable\OpenCover.Simple.Target.Core.Portable.csprojO:\opencover\main\Open
+  Cover.Simple.Target.Core.Embedded\OpenCover.Simple.Target.Core.Embedded.csproj###################################
+   [exec] ########### End Stage ############
+   [exec] ###################################
+   [exec] [EndPhase] : O:\opencover/tools\sonarqube\runner\MSBuild.SonarQube.Runner.exe end
+   [exec] SonarQube Scanner for MSBuild 2.3.1
+   [exec] Default properties file was found at O:\opencover\tools\sonarqube\runner\SonarQube.Analysis.xml
+   [exec] Loading analysis properties from O:\opencover\tools\sonarqube\runner\SonarQube.Analysis.xml
+   [exec] Post-processing started.
+   [exec] 09:42:23.468 Loading the SonarQube analysis config from O:\opencover\main\.sonarqube\conf\SonarQubeAnalysisConfig.xml
+   [exec] 09:42:23.468 Not running under TeamBuild
+   [exec] 09:42:23.468 Analysis base directory: O:\opencover\main\.sonarqube
+   [exec] Build directory:
+   [exec] Bin directory: O:\opencover\main\.sonarqube\bin
+   [exec] Config directory: O:\opencover\main\.sonarqube\conf
+   [exec] Output directory: O:\opencover\main\.sonarqube\out
+   [exec] Config file: O:\opencover\main\.sonarqube\conf\SonarQubeAnalysisConfig.xml
+   [exec] Generating SonarQube project properties file to O:\opencover\main\.sonarqube\out\sonar-project.properties
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed:
+  O:\opencover\main\OpenCover.3rdParty.Signer\bin\Release\OpenCover.3rdParty.Signer.exe.RoslynCA.json
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed: O:\opencover\main\bin\Release\OpenCover.Console.exe.RoslynCA.json
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed: O:\opencover\main\bin\Release\OpenCover.Extensions.dll.RoslynCA.json
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed:
+  O:\opencover\main\OpenCover.Framework\bin\Release\OpenCover.Framework.dll.RoslynCA.json
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed: O:\opencover\main\bin\Release\OpenCover.MSBuild.dll.RoslynCA.json
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed:
+  O:\opencover\main\OpenCover.Simple.Target.Core.Embedded\bin\Release\netcoreapp1.1\OpenCover.Simple.Target.Core.Embedded.dll.RoslynCA.json
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed:
+  O:\opencover\main\OpenCover.Simple.Target.Core.Portable\bin\Release\netcoreapp1.1\OpenCover.Simple.Target.Core.Portable.dll.RoslynCA.json
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed:
+  O:\opencover\main\OpenCover.Simple.Target.Core\bin\Release\netcoreapp1.1\OpenCover.Simple.Target.Core.dll.RoslynCA.json
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed:
+  O:\opencover\main\bin\Release\x64\OpenCover.Simple.Target.exe.RoslynCA.json
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed:
+  O:\opencover\main\OpenCover.Specs\bin\Release\OpenCover.Specs.dll.RoslynCA.json
+   [exec] The supplied Code Analysis ErrorLog file is a valid json file and does not need to be fixed: O:\opencover\main\bin\Common\OpenCover.Support.dll.RoslynCA.json
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\GlobalAssemblyInfo.cs, project:
+  O:\opencover\main\OpenCover.Console\OpenCover.Console.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\Version.cs, project:
+  O:\opencover\main\OpenCover.Console\OpenCover.Console.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\AssemblyCopyright.tt, project:
+  O:\opencover\main\OpenCover.Console\OpenCover.Console.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\GlobalAssemblyInfo.cs, project:
+  O:\opencover\main\OpenCover.Extensions\OpenCover.Extensions.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\Version.cs, project:
+  O:\opencover\main\OpenCover.Extensions\OpenCover.Extensions.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\AssemblyCopyright.tt, project:
+  O:\opencover\main\OpenCover.Extensions\OpenCover.Extensions.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\GlobalAssemblyInfo.cs, project:
+  O:\opencover\main\OpenCover.Framework\OpenCover.Framework.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\Version.cs, project:
+  O:\opencover\main\OpenCover.Framework\OpenCover.Framework.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\AssemblyCopyright.tt, project:
+  O:\opencover\main\OpenCover.Framework\OpenCover.Framework.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\GlobalAssemblyInfo.cs, project:
+  O:\opencover\main\OpenCover.MSBuild\OpenCover.MSBuild.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\Version.cs, project:
+  O:\opencover\main\OpenCover.MSBuild\OpenCover.MSBuild.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\GlobalAssemblyInfo.cs, project:
+  O:\opencover\main\OpenCover.Support\OpenCover.Support.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\GlobalAssemblyInfo.cs, project:
+  O:\opencover\main\OpenCover.Test\OpenCover.Test.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\build\Version\Version.cs, project:
+  O:\opencover\main\OpenCover.Test\OpenCover.Test.csproj
+   [exec] WARNING: File is not under the project directory and cannot currently be analysed by SonarQube. File: O:\opencover\tools\Moq.contrib\UnityAutoMockContainer.cs,
+  project: O:\opencover\main\OpenCover.Test\OpenCover.Test.csproj
+   [exec] Setting analysis property: sonar.visualstudio.enable=false
+   [exec] Writing processing summary to O:\opencover\main\.sonarqube\out\ProjectInfo.log
+   [exec] SONAR_SCANNER_OPTS is not configured. Setting it to the default value of -Xmx1024m
+   [exec] Calling the SonarQube Scanner...
+   [exec] Setting environment variable 'SONAR_SCANNER_OPTS'. Value: -Xmx1024m
+   [exec] Executing file O:\opencover\tools\sonarqube\runner\sonar-scanner-3.0.1.733\bin\sonar-scanner.bat
+   [exec] Args: -Dsonar.scanAllFiles=true -Dproject.settings=O:\opencover\main\.sonarqube\out\sonar-project.properties <sensitive data removed>
+   [exec] Working directory: O:\opencover\main
+   [exec] Timeout (ms):-1
+   [exec] Process id: 47968
+   [exec] O:\opencover\tools\sonarqube\runner\sonar-scanner-3.0.1.733\bin\..
+   [exec] INFO: Scanner configuration file: O:\opencover\tools\sonarqube\runner\sonar-scanner-3.0.1.733\bin\..\conf\sonar-scanner.properties
+   [exec] INFO: Project root configuration file: O:\opencover\main\.sonarqube\out\sonar-project.properties
+   [exec] 09:42:23.818 INFO: SonarQube Scanner 3.0.1.733
+   [exec] 09:42:23.835 INFO: Java 1.8.0_112 Oracle Corporation (64-bit)
+   [exec] 09:42:23.835 INFO: Windows 10 10.0 amd64
+   [exec] 09:42:23.835 INFO: SONAR_SCANNER_OPTS=-Xmx1024m
+   [exec] 09:42:23.969 DEBUG: keyStore is :
+   [exec] 09:42:23.969 DEBUG: keyStore type is : jks
+   [exec] 09:42:23.969 DEBUG: keyStore provider is :
+   [exec] 09:42:23.969 DEBUG: init keystore
+   [exec] 09:42:23.969 DEBUG: init keymanager of type SunX509
+   [exec] 09:42:24.306 INFO: User cache: C:\Users\harness\.sonar\cache
+   [exec] 09:42:24.306 DEBUG: Extract sonar-scanner-api-batch in temp...
+   [exec] 09:42:24.322 DEBUG: Get bootstrap index...
+   [exec] 09:42:24.322 DEBUG: Download: https://sonarcloud.io/batch/index
+   [exec] 09:42:25.743 DEBUG: Get bootstrap completed
+   [exec] 09:42:25.745 DEBUG: Create isolated classloader...
+   [exec] 09:42:25.761 DEBUG: Start temp cleaning...
+   [exec] 09:42:25.779 DEBUG: Temp cleaning done
+   [exec] 09:42:25.780 DEBUG: Execution getVersion
+   [exec] 09:42:25.788 DEBUG: Execution start
+   [exec] 09:42:26.554 INFO: Publish mode
+   [exec] 09:42:26.932 INFO: Load global settings
+   [exec] 09:42:28.299 DEBUG: GET 200 https://sonarcloud.io/api/settings/values.protobuf | time=1340ms
+   [exec] 09:42:28.335 INFO: Load global settings (done) | time=1405ms
+   [exec] 09:42:28.356 INFO: Server id: AVdllfqQ9IFRWI6U49y8
+   [exec] 09:42:28.385 INFO: User cache: C:\Users\harness\.sonar\cache
+   [exec] 09:42:28.810 INFO: Load plugins index
+   [exec] 09:42:29.067 DEBUG: GET 200 https://sonarcloud.io/api/plugins/installed | time=256ms
+   [exec] 09:42:29.147 INFO: Load plugins index (done) | time=338ms
+   [exec] 09:42:29.147 DEBUG: Load plugins
+   [exec] 09:42:29.477 DEBUG: Load plugins (done) | time=330ms
+   [exec] 09:42:29.513 DEBUG: API compatibility mode is enabled on plugin CVS [scmcvs] (built with API lower than 5.2)
+   [exec] 09:42:29.534 DEBUG: API compatibility mode is enabled on plugin Mercurial [scmmercurial] (built with API lower than 5.2)
+   [exec] 09:42:30.053 DEBUG: Plugins:
+   [exec] 09:42:30.054 DEBUG: * CVS 1.0 (scmcvs)
+   [exec] 09:42:30.055 DEBUG: * Bitbucket Authentication for SonarQube 1.0 (authbitbucket)
+   [exec] 09:42:30.055 DEBUG: * Branch 1.0.0.507 (branch)
+   [exec] 09:42:30.056 DEBUG: * SonarQube :: Plugins :: SCM :: SVN 1.6.0.860 (scmsvn)
+   [exec] 09:42:30.057 DEBUG: * Billing 1.3.0.748 (billing)
+   [exec] 09:42:30.057 DEBUG: * SonarPLSQL 3.1.0.1464 (plsql)
+   [exec] 09:42:30.057 DEBUG: * SonarC# 6.6.0.3969 (csharp)
+   [exec] 09:42:30.058 DEBUG: * SonarJava 4.15.0.12310 (java)
+   [exec] 09:42:30.063 DEBUG: * Web 2.5.0.476 (web)
+   [exec] 09:42:30.063 DEBUG: * Flex 2.3 (flex)
+   [exec] 09:42:30.064 DEBUG: * SonarXML 1.4.3.1027 (xml)
+   [exec] 09:42:30.066 DEBUG: * SonarTS 1.2.0.1484 (typescript)
+   [exec] 09:42:30.066 DEBUG: * SonarVB 4.1.0.156 (vbnet)
+   [exec] 09:42:30.066 DEBUG: * SonarSwift 3.1.0.2067 (swift)
+   [exec] 09:42:30.066 DEBUG: * GitHub 1.4.2.1027 (github)
+   [exec] 09:42:30.067 DEBUG: * SonarCFamily 5.0.0.9359 (cpp)
+   [exec] 09:42:30.067 DEBUG: * SonarPython 1.8.0.1496 (python)
+   [exec] 09:42:30.067 DEBUG: * GitHub Authentication for SonarQube 1.3 (authgithub)
+   [exec] 09:42:30.067 DEBUG: * Mercurial 1.1.1 (scmmercurial)
+   [exec] 09:42:30.067 DEBUG: * SonarTSQL 1.1.0.2177 (tsql)
+   [exec] 09:42:30.067 DEBUG: * SonarJS 3.3.0.5702 (javascript)
+   [exec] 09:42:30.067 DEBUG: * License 3.2.0.1163 (license)
+   [exec] 09:42:30.067 DEBUG: * SonarQube :: Plugins :: SCM :: Git 1.3.0.869 (scmgit)
+   [exec] 09:42:30.068 DEBUG: * HA 1.0.0.55 (ha)
+   [exec] 09:42:30.068 DEBUG: * SonarPHP 2.12.0.2871 (php)
+   [exec] 09:42:30.068 DEBUG: * Developer 1.0.0.240 (developer)
+   [exec] 09:42:30.068 DEBUG: * SonarABAP 3.5.0.1080 (abap)
+   [exec] 09:42:30.068 DEBUG: * SVG Badges 3.0.1 (status)
+   [exec] 09:42:30.107 DEBUG: Execution getVersion
+   [exec] 09:42:30.108 INFO: SonarQube server 6.7.0
+   [exec] 09:42:30.109 INFO: Default locale: "en_AU", source code encoding: "UTF-8"
+   [exec] 09:42:30.110 DEBUG: Work directory: O:\opencover\main\.sonarqube\out\.sonar
+   [exec] 09:42:30.110 DEBUG: Execution getVersion
+   [exec] 09:42:30.111 DEBUG: Execution execute
+   [exec] 09:42:31.396 INFO: Process project properties
+   [exec] 09:42:31.435 DEBUG: Path 'O:\opencover\main\OpenCover.Extentions' does not exist, will not be used as source
+   [exec] 09:42:31.461 DEBUG: Process project properties (done) | time=65ms
+   [exec] 09:42:31.492 INFO: Load branch configuration
+   [exec] 09:42:31.494 INFO: Load branch configuration (done) | time=2ms
+   [exec] 09:42:31.494 INFO: Load project repositories
+   [exec] 09:42:31.944 DEBUG: GET 200 https://sonarcloud.io/batch/project.protobuf?key=opencover | time=447ms
+   [exec] 09:42:32.203 INFO: Load project repositories (done) | time=709ms
+   [exec] 09:42:32.214 INFO: Execute project builders
+   [exec] 09:42:32.216 INFO: Execute project builders (done) | time=1ms
+   [exec] The SonarQube Scanner completed successfully
+   [exec] 09:43:02.718 Creating a summary markdown file...
+  BUILD Succeeded
+  EOM
+scriptType: BASH
+timeoutMillis: 600000
